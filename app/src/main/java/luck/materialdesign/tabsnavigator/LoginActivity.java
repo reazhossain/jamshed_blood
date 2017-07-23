@@ -1,5 +1,6 @@
 package luck.materialdesign.tabsnavigator;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -95,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
         String email = email_ET.getText().toString();
         String password = password_ET.getText().toString();
 
+
         if (email == null || password == null){
             Toast.makeText(this, "Fill up the form please", Toast.LENGTH_SHORT).show();
             return;
@@ -117,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                             // ...
                         }
                     });
+
 
     }
 }

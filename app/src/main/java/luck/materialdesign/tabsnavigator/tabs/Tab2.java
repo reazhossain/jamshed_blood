@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import luck.materialdesign.tabsnavigator.R;
 
-/**
- * Created by Edwin on 15/02/2015.
- */
 public class Tab2 extends Fragment {
     
     @Override

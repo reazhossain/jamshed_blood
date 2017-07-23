@@ -29,12 +29,14 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Name :"/>
+
         <EditText
-            android:gravity="center"
-            android:layout_weight="2"
+            android:id="@+id/editText"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:hint="Enter your full name"/>
+            android:layout_weight="2"
+            android:gravity="center"
+            android:hint="Enter your full name" />
 
     </LinearLayout>
     <LinearLayout
@@ -50,14 +52,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Blood Group :"/>
+
         <Spinner
             android:id="@+id/blood_group"
-            android:layout_weight="1"
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            >
-        </Spinner>
+            android:layout_weight="1"
+            android:gravity="center"></Spinner>
 
     </LinearLayout>
 
@@ -75,12 +76,14 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Number :"/>
+
         <EditText
-            android:gravity="center"
-            android:layout_weight="2"
+            android:id="@+id/editText2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:hint="Enter your phone number"/>
+            android:layout_weight="2"
+            android:gravity="center"
+            android:hint="Enter your phone number" />
 
     </LinearLayout>
 
@@ -92,11 +95,13 @@
         android:orientation="horizontal">
 
         <TextView
-            android:gravity="center"
-            android:layout_weight="1"
+            android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Address :"/>
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Address :" />
+
         <EditText
             android:gravity="center"
             android:layout_weight="2"
