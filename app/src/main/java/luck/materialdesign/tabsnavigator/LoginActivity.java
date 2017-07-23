@@ -1,5 +1,6 @@
 package luck.materialdesign.tabsnavigator;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -96,14 +97,22 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
 
+
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
-                            Toast.makeText(LoginActivity.this, "Login Successful :)",
-                                    Toast.LENGTH_SHORT).show();
+
+
+
                         }
+                        Toast.makeText(LoginActivity.this, "Login Successful :)",
+                                Toast.LENGTH_LONG).show();
+
+                        Intent home = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(home);
+
 
                         // ...
                     }
