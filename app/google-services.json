@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "258763789250",
+    "firebase_url": "https://tabsnavigator.firebaseio.com",
+    "project_id": "tabsnavigator",
+    "storage_bucket": "tabsnavigator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258763789250:android:d616e6899c6428a3",
+        "android_client_info": {
+          "package_name": "luck.materialdesign.tabsnavigator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258763789250-h2qna57u753gadvd3hkhnsiqmnvahi6v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "luck.materialdesign.tabsnavigator",
+            "certificate_hash": "c811b8e3cab285a0e67bf48f67038f229c0c6ca7"
+          }
+        },
+        {
+          "client_id": "258763789250-4epqmqn8j46afarjclqi6cbe9k2llaqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1LyR1IlslADp_soc1q9oaVGrm5_dgXEE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258763789250-4epqmqn8j46afarjclqi6cbe9k2llaqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
