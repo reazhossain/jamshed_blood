@@ -1,5 +1,6 @@
 package luck.materialdesign.tabsnavigator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -44,5 +45,8 @@ public class UpdateInfo extends AppCompatActivity {
 
         Donar_list_model donarListModel = new Donar_list_model(donarName, donarNumber, donarAddress);
         databaseReference.child("DonarInfo").setValue(donarListModel);
+
+        Intent home = new Intent(UpdateInfo.this, MainActivity.class);
+        startActivity(home);
     }
 }
