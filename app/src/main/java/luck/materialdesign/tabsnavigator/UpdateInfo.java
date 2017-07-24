@@ -33,7 +33,7 @@ public class UpdateInfo extends AppCompatActivity {
 
         int spinner_pos = spinner.getSelectedItemPosition();
         String[] blood_group_entries = getResources().getStringArray(R.array.blood_group_entries);*/
-    }
+}
 
     public void Update(View view) {
         DatabaseReference databaseReference = mFirebaseDB.getReference();
