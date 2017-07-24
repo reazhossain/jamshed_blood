@@ -4,10 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import luck.materialdesign.tabsnavigator.Model.Donar_list_model;
 
 public class UpdateInfo extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDB;

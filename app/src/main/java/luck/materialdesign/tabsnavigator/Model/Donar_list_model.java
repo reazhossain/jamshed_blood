@@ -1,4 +1,4 @@
-package luck.materialdesign.tabsnavigator;
+package luck.materialdesign.tabsnavigator.Model;
 
 /**
  * Created by Jamshed on 7/24/2017.

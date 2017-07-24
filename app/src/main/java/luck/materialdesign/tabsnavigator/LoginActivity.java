@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view) {
 
-        
+
 
         String email = email_ET.getText().toString();
         String password = password_ET.getText().toString();
