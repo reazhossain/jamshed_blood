@@ -4,6 +4,8 @@ package luck.materialdesign.tabsnavigator.tabs;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Created by Edwin on 15/02/2015.
@@ -28,16 +30,18 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
 
         if(position == 0) // if the position is 0 we are returning the First tab
-        {
+        { Log.d("tab", "1");
             Tab1 tab1 = new Tab1();
             return tab1;
         }
         else   if(position == 1)         // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
         {
+            Log.d("tab", "2");
             Tab2 tab2 = new Tab2();
             return tab2;
         }
         else{
+            Log.d("tab", "3");
             Tab3 tab3 = new Tab3();
             return tab3;
         }
