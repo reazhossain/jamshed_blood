@@ -15,8 +15,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
@@ -36,21 +39,42 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Tab3 extends Fragment implements OnMapReadyCallback {
+public class Tab3 extends Fragment {
 
     private GoogleMap mMap;
+    MapView mMapView;
     private static final String TAG = "Nearby";
     PlaceApiService placeApiService;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_maps,container,false);
+        View v = inflater.inflate(R.layout.activity_maps, container, false);
 
-        getNearbyPlaces();
+        ///// getNearbyPlaces();
+
+        mMapView = (MapView) v.findViewById(R.id.mapView);
+        mMapView.onCreate(savedInstanceState);
+
+        mMapView.onResume(); // needed to get the map to display immediately
+
+        mapIn();
+
 
         return v;
     }
 
+    public void mapIn() {
+        mMapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap x) {
+                mMap = x;
+                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+                getNearbyPlaces();
+
+            }
+        });
+    }
 
     public void getNearbyPlaces() {
 
@@ -77,11 +101,7 @@ public class Tab3 extends Fragment implements OnMapReadyCallback {
                 if (nearByPlaces.getStatus().equals("OK")) {
 
                     List<Result> results = nearByPlaces.getResults();
-
-
-
-
-
+                    LatLng latLng = null;
                     for (Result result : results) {
 
                         Geometry geo = result.getGeometry();
@@ -89,26 +109,27 @@ public class Tab3 extends Fragment implements OnMapReadyCallback {
 
 
                         String name = result.getName();
-                        String lati = location.getLat().toString();
-                        String longi = location.getLng().toString();
 
-                        Log.d("List", "" + name);
+                        Log.d(TAG, "" + name);
+                        if (location.getLat() != null && location.getLng() != null) {
+
+                            latLng = new LatLng(location.getLat(), location.getLng());
+                            Log.d(TAG, "Lat" + latLng);
+                            addMarker(latLng, name);
+
+
+                        }
+
 
                     }
-                    try {
 
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                    mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
 
-                    } catch (Exception e) {
-                        Log.d(TAG, e.getMessage());
-
-                    }
 
                 } else {
                     Log.d(TAG, "" + nearByPlaces.getStatus());
                     Toast.makeText(getActivity(), "No Place Found", Toast.LENGTH_LONG).show();
-
-
-
 
 
                 }
@@ -119,9 +140,8 @@ public class Tab3 extends Fragment implements OnMapReadyCallback {
             @Override
             public void onFailure(Call<PlaceApiModel> call, Throwable t) {
 
-
+                Log.d(TAG, "Connection fail");
                 Toast.makeText(getActivity(), "Connection to server failed.", Toast.LENGTH_LONG).show();
-
 
 
             }
@@ -130,15 +150,17 @@ public class Tab3 extends Fragment implements OnMapReadyCallback {
     }
 
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void addMarker(LatLng latLng, String name) {
 
-        mMap = googleMap;
+        Marker marker = mMap.addMarker(new MarkerOptions()
+                .position(latLng)
+                .title(name)
+                /// .snippet("Distance \n"+totalDistanceBetweenTwoPosition)
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        marker.showInfoWindow();
+
 
     }
 }

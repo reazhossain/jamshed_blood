@@ -36,12 +36,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".tabs.MapsActivity"
-            android:label="@string/title_activity_maps" />
         <activity android:name=".UpdateInfo" />
         <activity android:name=".NewsFeed" />
-        <activity android:name=".FabActivity"></activity>
+        <activity android:name=".FabActivity" />
     </application>
 
 </manifest>
