@@ -14,6 +14,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "login_info";
@@ -46,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
                 // ...
             }
         };
+
+        databaseCheck();
     }
 
     @Override
@@ -129,6 +136,26 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
+
+    }
+    public  void  databaseCheck(){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("DonarInfo");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot value : dataSnapshot.getChildren()){
+                    Log.d(TAG, "Values "+value.toString());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d(TAG, "Cancle ");
+
+            }
+        });
 
     }
 }
