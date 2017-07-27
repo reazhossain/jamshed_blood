@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -23,6 +24,7 @@ public class UpdateInfo extends AppCompatActivity {
         name_ET = (EditText) findViewById(R.id.name_ET);
         number_ET = (EditText) findViewById(R.id.number_ET);
         address_ET = (EditText) findViewById(R.id.address_ET);
+
 
         mFirebaseDB = FirebaseDatabase.getInstance();
 
@@ -44,7 +46,7 @@ public class UpdateInfo extends AppCompatActivity {
         String donarAddress = address_ET.getText().toString();
 
         Donar_list_model donarListModel = new Donar_list_model(donarName, donarNumber, donarAddress);
-        databaseReference.child("DonarInfo").setValue(donarListModel);
+        databaseReference.child("DonarInfo").push().setValue(donarListModel);
 
         Intent home = new Intent(UpdateInfo.this, MainActivity.class);
         startActivity(home);
