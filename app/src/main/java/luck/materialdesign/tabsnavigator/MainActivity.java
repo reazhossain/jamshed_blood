@@ -20,6 +20,9 @@ import luck.materialdesign.tabsnavigator.utils.UtilsMiscellaneous;
  * Created by Edwin on 15/02/2015.
  */
 public class MainActivity extends ActionBarActivity {
+    //private FloatingActionButton fab;
+
+
 
     // Declaring Your View and Variables
 

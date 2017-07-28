@@ -8,27 +8,33 @@
     android:orientation="vertical"
     tools:context="luck.materialdesign.tabsnavigator.FabActivity">
     <EditText
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="time"/>
 
     <EditText
+        android:id="@+id/post_ET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="post"/>
     <EditText
+        android:id="@+id/hospital_name_ET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Hospital Name"/>
 
     <EditText
+        android:id="@+id/number_ET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Number"/>
 
     <Button
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="post"/>
+        android:text="post"
+        android:onClick="Status_Post"/>
 
 </LinearLayout>
