@@ -43,7 +43,6 @@
             android:layout_margin="16dp"
             android:src="@android:drawable/ic_menu_edit"
             android:visibility="visible"
-            app:backgroundTint="@color/colorPrimary"
             app:fabSize="mini"
             app:rippleColor="@android:color/holo_green_dark"
             app:srcCompat="@style/AlertDialog.AppCompat"
@@ -63,3 +62,5 @@
 
 
 </android.support.v4.widget.DrawerLayout>
+
+    <!--app:backgroundTint="@color/colorPrimary"-->

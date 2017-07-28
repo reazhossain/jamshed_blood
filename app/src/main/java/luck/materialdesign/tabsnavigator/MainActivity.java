@@ -1,14 +1,18 @@
 package luck.materialdesign.tabsnavigator;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import luck.materialdesign.tabsnavigator.customViews.ScrimInsetsFrameLayout;
 import luck.materialdesign.tabsnavigator.sliding.SlidingTabLayout;
@@ -19,10 +23,10 @@ import luck.materialdesign.tabsnavigator.utils.UtilsMiscellaneous;
 /**
  * Created by Edwin on 15/02/2015.
  */
-public class MainActivity extends ActionBarActivity {
-    //private FloatingActionButton fab;
+public class MainActivity extends AppCompatActivity {
 
 
+    private FloatingActionButton fab;
 
     // Declaring Your View and Variables
 
@@ -41,6 +45,18 @@ public class MainActivity extends ActionBarActivity {
         init_slider();
 
         init_navigator();
+
+
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+
+                Intent intent = new Intent(MainActivity.this,FabActivity.class);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this, "This is floating action bar", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 

@@ -20,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static android.R.id.empty;
+
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "login_info";
     private FirebaseAuth mAuth;
@@ -48,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
-                // ...
+
             }
         };
 
@@ -107,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = password_ET.getText().toString();
 
 
-        if (email == null || password == null) {
+        if (email== null || password == null) {
             Toast.makeText(this, "Fill up the form please", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -117,20 +119,19 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
+
+                        if (task.isSuccessful()) {
+                            Intent home = new Intent(LoginActivity.this, UpdateInfo.class);
+                            startActivity(home);
+
+                        }
+                        else{
+                            Toast.makeText(LoginActivity.this, "Login Failed :)",
+                                    Toast.LENGTH_LONG).show();
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
 
                         }
 
-                        Toast.makeText(LoginActivity.this, "Login Successful :)",
-                                Toast.LENGTH_LONG).show();
-
-
-                        Intent home = new Intent(LoginActivity.this, UpdateInfo.class);
-                        startActivity(home);
 
                         // ...
                     }
