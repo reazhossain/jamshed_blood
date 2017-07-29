@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import static android.R.id.empty;
@@ -63,6 +64,8 @@ public class LoginActivity extends AppCompatActivity {
         };
 
         databaseCheck();
+
+        filterDatabase();
     }
 
     @Override
@@ -154,6 +157,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 for (DataSnapshot value : dataSnapshot.getChildren()){
                     Log.d(TAG, "Values "+value.toString());
+
+
                 }
             }
 
@@ -164,5 +169,31 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void filterDatabase(){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+
+        Query query = reference.child("DonarInfo").orderByChild("donarAddress").equalTo("badda");
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.exists()) {
+
+                    ///All address
+                    for (DataSnapshot value : dataSnapshot.getChildren()) {
+
+                        Toast.makeText(LoginActivity.this, "value :" + value, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }
