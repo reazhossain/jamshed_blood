@@ -56,7 +56,7 @@
                         android:id="@+id/navigation_drawer_account_information_display_name"
                         style="@style/NavDrawerAccountInfoText"
                         android:text="@string/tools_text_account_information_username"
-                        tools:fontFamily="sans-serif-medium"/>
+                        tools:fontFamily="sans-serif-medium" />
 
                 </LinearLayout>
 
@@ -102,13 +102,13 @@
                         style="@style/NavDrawerRowItemText"
                         android:text="First Menu"
                         tools:fontFamily="sans-serif-medium"
-                        tools:textColor="@color/nav_drawer_item_text_selected"/>
+                        tools:textColor="@color/nav_drawer_item_text_selected" />
 
                 </FrameLayout>
 
                 <FrameLayout
                     android:id="@+id/navigation_drawer_items_list_linearLayout_explore"
-                    style="@style/NavDrawerRowLayout.Main" >
+                    style="@style/NavDrawerRowLayout.Main">
 
                     <luck.materialdesign.tabsnavigator.customViews.TintOnStateImageView
                         android:id="@+id/navigation_drawer_items_list_icon_explore"
@@ -120,12 +120,11 @@
                         android:id="@+id/navigation_drawer_items_textView_explore"
                         style="@style/NavDrawerRowItemText"
                         android:text="Second Menu"
-                        tools:fontFamily="sans-serif-medium"/>
+                        tools:fontFamily="sans-serif-medium" />
 
                 </FrameLayout>
 
-                <include
-                    layout="@layout/navigation_drawer_divider"/>
+                <include layout="@layout/navigation_drawer_divider" />
 
                 <FrameLayout
                     android:id="@+id/navigation_drawer_items_list_linearLayout_help_and_feedback"
@@ -145,21 +144,25 @@
 
                 </FrameLayout>
 
+
+
                 <FrameLayout
-                    android:id="@+id/navigation_drawer_items_list_linearLayout_about"
+                    android:id="@+id/navigation_drawer_items_list_linearLayout_logout"
                     style="@style/NavDrawerRowLayout.Secondary">
 
                     <luck.materialdesign.tabsnavigator.customViews.TintOnStateImageView
-                        android:id="@+id/navigation_drawer_items_list_icon_about"
+                        android:id="@+id/navigation_drawer_items_list_icon_logout"
                         style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_info_white_24dp"
                         tools:ignore="ContentDescription" />
 
                     <TextView
-                        android:id="@+id/navigation_drawer_items_textView_about"
+                        android:id="@+id/navigation_drawer_items_textView_logout"
                         style="@style/NavDrawerRowItemText"
-                        android:text="Abouts"
+                        android:text="Sign Out"
                         tools:fontFamily="sans-serif-medium" />
+
+
 
                 </FrameLayout>
 
