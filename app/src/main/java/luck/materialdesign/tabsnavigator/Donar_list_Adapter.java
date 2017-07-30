@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
-import luck.materialdesign.tabsnavigator.Adapter.NewsFeedRecyleAdapter;
 import luck.materialdesign.tabsnavigator.Model.Donar_list_model;
 
 /**
