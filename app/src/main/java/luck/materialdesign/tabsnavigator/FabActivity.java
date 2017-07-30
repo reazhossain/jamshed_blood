@@ -1,5 +1,6 @@
 package luck.materialdesign.tabsnavigator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +13,6 @@ public class FabActivity extends AppCompatActivity {
 
     EditText post_ET,hospital_name_ET,number_ET;
     private FirebaseDatabase firebaseDatabase;
-
-
 
 
     @Override
@@ -39,6 +38,8 @@ public class FabActivity extends AppCompatActivity {
         News_feed_post_Model newsFeedPostModel = new News_feed_post_Model(post,Hospital_name,number);
         databaseReference.child("News Feed").push().setValue(newsFeedPostModel);
 
+        Intent home = new Intent(FabActivity.this, NewsFeed.class);
+        startActivity(home);
 
     }
 }
