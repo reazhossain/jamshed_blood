@@ -191,7 +191,7 @@ public class LoginActivity extends AppCompatActivity {
                     ///All address
                     for (DataSnapshot value : dataSnapshot.getChildren()) {
 
-                        Toast.makeText(LoginActivity.this, "value :" + value, Toast.LENGTH_SHORT).show();
+                       //// Toast.makeText(LoginActivity.this, "value :" + value, Toast.LENGTH_SHORT).show();
                     }
                 }
             }

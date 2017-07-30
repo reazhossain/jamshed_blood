@@ -24,14 +24,13 @@ import luck.materialdesign.tabsnavigator.utils.UtilsDevice;
 import luck.materialdesign.tabsnavigator.utils.UtilsMiscellaneous;
 
 
-
 /**
  * Created by Edwin on 15/02/2015.
  */
 public class MainActivity extends AppCompatActivity {
 
 
-    private static final  String TAG =  "Mainactivity";
+    private static final String TAG = "Mainactivity";
     private FloatingActionButton fab;
 
     // Declaring Your View and Variables
@@ -40,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
-    CharSequence Titles[]={"News Feed","Search Blood", "Nearby Hospital"};
-    int Numboftabs =3;
+    CharSequence Titles[] = {"News Feed", "Search Blood", "Nearby Hospital"};
+    int Numboftabs = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
 
-        fab.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
+        fab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this,FabActivity.class);
+                Intent intent = new Intent(MainActivity.this, FabActivity.class);
                 startActivity(intent);
                 Toast.makeText(MainActivity.this, "This is floating action bar", Toast.LENGTH_LONG).show();
             }
@@ -83,12 +82,12 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
 
-               try{
+            try {
                 FirebaseAuth mAuth = FirebaseAuth.getInstance();
                 // Firebase sign out
                 mAuth.signOut();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 Log.d(TAG, "Sign Out");
             }
 
@@ -104,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void init_slider() {
         // Creating The Toolbar and setting it as the Toolbar for the activity
 
@@ -113,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
-        adapter =  new ViewPagerAdapter(getSupportFragmentManager(),Titles,Numboftabs);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager(), Titles, Numboftabs);
 
         // Assigning ViewPager View and setting the adapter
         pager = (ViewPager) findViewById(R.id.pager);
@@ -140,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mActionBarDrawerToggle;
     private ScrimInsetsFrameLayout mScrimInsetsFrameLayout;
 
-    private void init_navigator(){
+    private void init_navigator() {
         // Navigation Drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.main_activity_DrawerLayout);
         mDrawerLayout.setStatusBarBackgroundColor(getResources().getColor(R.color.primaryDark));
@@ -153,11 +151,9 @@ public class MainActivity extends AppCompatActivity {
                         toolbar,
                         R.string.navigation_drawer_opened,
                         R.string.navigation_drawer_closed
-                )
-        {
+                ) {
             @Override
-            public void onDrawerSlide(View drawerView, float slideOffset)
-            {
+            public void onDrawerSlide(View drawerView, float slideOffset) {
                 // Disables the burger/arrow animation by default
                 super.onDrawerSlide(drawerView, 0);
             }
@@ -165,8 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
 
-        if (getSupportActionBar() != null)
-        {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setHomeButtonEnabled(true);

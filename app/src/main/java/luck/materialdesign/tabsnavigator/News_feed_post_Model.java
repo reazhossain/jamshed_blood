@@ -10,35 +10,63 @@ public class News_feed_post_Model {
     private String SeekerNumber;
 
     public News_feed_post_Model(String status, String hospital_name, String seekerNumber) {
-        Status = status;
-        Hospital_name = hospital_name;
-        SeekerNumber = seekerNumber;
+        this.Status = status;
+        this.Hospital_name = hospital_name;
+        this.SeekerNumber = seekerNumber;
     }
 
+    public News_feed_post_Model(){}
 
 
     public String getStatus() {
-        return Status;
+
+        if(Status != null)
+            return Status;
+        else
+            return "Null";
     }
 
     public void setStatus(String status) {
-        Status = status;
+
+        if(status != null)
+            Status = status;
+        else
+            Status = "Null";
     }
 
     public String getHospital_name() {
-        return Hospital_name;
+
+        if(Hospital_name != null)
+            return Hospital_name;
+        else
+            return "Null";
+
+
     }
 
     public void setHospital_name(String hospital_name) {
-        Hospital_name = hospital_name;
+
+        if(hospital_name != null)
+            Hospital_name = hospital_name;
+        else
+            Hospital_name = "Null";
     }
 
     public String getSeekerNumber() {
-        return SeekerNumber;
+
+
+        if(SeekerNumber != null)
+            return SeekerNumber;
+        else
+            return "Null";
     }
 
     public void setSeekerNumber(String seekerNumber) {
-        SeekerNumber = seekerNumber;
+
+        if(seekerNumber != null)
+                SeekerNumber = seekerNumber;
+        else
+            seekerNumber = "Null";
     }
 
 
