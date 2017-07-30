@@ -60,7 +60,7 @@ public class Donar_list_Adapter extends RecyclerView.Adapter<Donar_list_Adapter.
 
     @Override
     public int getItemCount() {
-        return 0;
+        return newArrayList.size();
     }
 
 
