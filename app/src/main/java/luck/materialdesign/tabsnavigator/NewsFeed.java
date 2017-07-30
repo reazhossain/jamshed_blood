@@ -46,7 +46,7 @@ public class NewsFeed extends AppCompatActivity {
 
             }
         });
-        NewsFeedAdapter newsFeedAdapter = new NewsFeedAdapter(this,arrayList);
-        CardView
+        /*NewsFeedAdapter newsFeedAdapter = new NewsFeedAdapter(this,arrayList);
+        CardView*/
     }
 }
