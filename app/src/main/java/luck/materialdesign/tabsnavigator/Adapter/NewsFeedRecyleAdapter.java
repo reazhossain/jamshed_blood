@@ -28,10 +28,12 @@ public class NewsFeedRecyleAdapter extends RecyclerView.Adapter<NewsFeedRecyleAd
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView mTextView;
+        public TextView post_tv,hospital_name_tv,number_tv;
         public ViewHolder(View v) {
             super(v);
-            mTextView = (TextView) v.findViewById(R.id.title);
+            post_tv = (TextView) v.findViewById(R.id.post_tv);
+            hospital_name_tv = (TextView) v.findViewById(R.id.hospital_name_tv);
+            number_tv = (TextView) v.findViewById(R.id.number_tv);
         }
     }
 
@@ -53,7 +55,9 @@ public class NewsFeedRecyleAdapter extends RecyclerView.Adapter<NewsFeedRecyleAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.mTextView.setText(newsArrayList.get(position).getSeekerNumber());
+        holder.post_tv.setText(newsArrayList.get(position).getStatus());
+        holder.hospital_name_tv.setText(newsArrayList.get(position).getHospital_name());
+        holder.number_tv.setText(newsArrayList.get(position).getSeekerNumber());
 
     }
 
