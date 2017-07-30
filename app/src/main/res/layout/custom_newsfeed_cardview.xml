@@ -13,6 +13,7 @@
         android:layout_height="match_parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@mipmap/ic_launcher"/>
@@ -34,6 +35,7 @@
             android:textSize="30dp"/>
 
         <TextView
+            android:id="@+id/post_TV"
             android:layout_weight="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -41,12 +43,14 @@
             android:textSize="30dp"/>
 
         <TextView
+            android:id="@+id/hospital_name_TV"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="Hospital"
             android:textSize="30dp"/>
         <TextView
+            android:id="@+id/pnumber_TV"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

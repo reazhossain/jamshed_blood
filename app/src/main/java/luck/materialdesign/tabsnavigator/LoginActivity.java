@@ -31,6 +31,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /*super.onCreate();
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);*/
+
         setContentView(R.layout.activity_login);
 
         email_ET = (EditText) findViewById(R.id.email_ET);
@@ -56,6 +60,8 @@ public class LoginActivity extends AppCompatActivity {
 
         databaseCheck();
     }
+
+
 
     @Override
     public void onStart() {
