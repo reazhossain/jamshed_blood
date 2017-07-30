@@ -9,10 +9,13 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import luck.materialdesign.tabsnavigator.customViews.ScrimInsetsFrameLayout;
 import luck.materialdesign.tabsnavigator.sliding.SlidingTabLayout;
@@ -20,12 +23,15 @@ import luck.materialdesign.tabsnavigator.tabs.ViewPagerAdapter;
 import luck.materialdesign.tabsnavigator.utils.UtilsDevice;
 import luck.materialdesign.tabsnavigator.utils.UtilsMiscellaneous;
 
+
+
 /**
  * Created by Edwin on 15/02/2015.
  */
 public class MainActivity extends AppCompatActivity {
 
 
+    private static final  String TAG =  "Mainactivity";
     private FloatingActionButton fab;
 
     // Declaring Your View and Variables
@@ -75,7 +81,22 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
+
+               try{
+                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                // Firebase sign out
+                mAuth.signOut();
+
+            }catch (Exception e){
+                Log.d(TAG, "Sign Out");
+            }
+
+            Intent login = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(login);
+
+            Toast.makeText(this, "SignOut successful", Toast.LENGTH_SHORT).show();
+
             return true;
         }
 
