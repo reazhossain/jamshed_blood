@@ -41,7 +41,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".UpdateInfo" />
-        <activity android:name=".NewsFeed" />
         <activity android:name=".FabActivity" />
     </application>
 

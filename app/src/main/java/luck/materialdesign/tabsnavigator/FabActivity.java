@@ -38,7 +38,7 @@ public class FabActivity extends AppCompatActivity {
         News_feed_post_Model newsFeedPostModel = new News_feed_post_Model(post,Hospital_name,number);
         databaseReference.child("News Feed").push().setValue(newsFeedPostModel);
 
-        Intent home = new Intent(FabActivity.this, NewsFeed.class);
+        Intent home = new Intent(FabActivity.this, MainActivity.class);
         startActivity(home);
 
     }

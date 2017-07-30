@@ -67,9 +67,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        databaseCheck();
+        databaseCheck(); //Collect all data from a table
 
-        filterDatabase();
+        filterDatabase(); //collect only filtered data that is equal to something
     }
 
 
@@ -170,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.d(TAG, "Cancle ");
+                Log.d(TAG, "Cancel ");
 
             }
         });
@@ -191,7 +191,7 @@ public class LoginActivity extends AppCompatActivity {
                     ///All address
                     for (DataSnapshot value : dataSnapshot.getChildren()) {
 
-                        Toast.makeText(LoginActivity.this, "value :" + value, Toast.LENGTH_SHORT).show();
+                       //// Toast.makeText(LoginActivity.this, "value :" + value, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
