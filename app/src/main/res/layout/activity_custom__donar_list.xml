@@ -31,6 +31,12 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="Address"/>
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/blood_group_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Blood group"/>
 
 
     </LinearLayout>

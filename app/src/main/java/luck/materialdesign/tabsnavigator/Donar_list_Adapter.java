@@ -24,6 +24,19 @@ public class Donar_list_Adapter extends RecyclerView.Adapter<Donar_list_Adapter.
 
     }
 
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        // each data item is just a string in this case
+        public TextView donar_name,donar_number,donar_address,donar_blood_group;
+        public ViewHolder(View v) {
+            super(v);
+            donar_name = (TextView) v.findViewById(R.id.donar_name_tv);
+            donar_number = (TextView) v.findViewById(R.id.donar_number_tv);
+            donar_address = (TextView) v.findViewById(R.id.donar_address_tv);
+            donar_blood_group = (TextView) v.findViewById(R.id.blood_group_tv);
+
+        }
+    }
+
 
 
     @Override
@@ -41,6 +54,7 @@ public class Donar_list_Adapter extends RecyclerView.Adapter<Donar_list_Adapter.
         holder.donar_name.setText(newArrayList.get(position).getDonarName());
         holder.donar_number.setText(newArrayList.get(position).getDonarNumber());
         holder.donar_address.setText(newArrayList.get(position).getDonarAddress());
+        holder.donar_blood_group.setText(newArrayList.get(position).getBlood_group());
 
     }
 
@@ -50,14 +64,5 @@ public class Donar_list_Adapter extends RecyclerView.Adapter<Donar_list_Adapter.
     }
 
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
-        public TextView donar_name,donar_number,donar_address;
-        public ViewHolder(View v) {
-            super(v);
-            donar_name = (TextView) v.findViewById(R.id.donar_name_tv);
-            donar_number = (TextView) v.findViewById(R.id.donar_number_tv);
-            donar_address = (TextView) v.findViewById(R.id.donar_address_tv);
-        }
-    }
+
 }
