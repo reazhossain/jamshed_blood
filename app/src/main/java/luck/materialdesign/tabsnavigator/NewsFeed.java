@@ -30,7 +30,6 @@ public class NewsFeed extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                //int count=0;
 
                 for(DataSnapshot snapshot: dataSnapshot.getChildren()){
                     News_feed_post_Model newsFeedPostModel = snapshot.getValue(News_feed_post_Model.class);
